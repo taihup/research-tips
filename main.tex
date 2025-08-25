@@ -1,0 +1,106 @@
+\documentclass[a4paper,	11pt]{article}
+\usepackage[spanish,es-tabla]{babel} % para acentos en español
+\usepackage[utf8]{inputenc} % para poder copiar acentos desde el pdf
+\usepackage[T1]{fontenc} % para poder copiar acentos desde el pdf
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage[hidelinks]{hyperref}
+\usepackage{color}
+\usepackage{siunitx}
+\setlength{\marginparwidth}{2cm}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multirow}
+\usepackage{tablefootnote}
+
+%\setlength{\marginparwidth}{2cm}
+\usepackage{todonotes}
+
+% changes margins
+\usepackage[a4paper, total={7.5in, 10.6in}]{geometry}
+
+\begin{document}
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\title{Tips Escritura Informes}
+\author{Taihú Pire}
+
+
+\maketitle
+
+
+Este documento intenta guiar al lector
+
+
+\section{Comentarios sobre el abstract}
+Cada oración del abstract tiene que decir algo puntual:
+La 1ra oración puede ser la que pone contexto.
+La 2da oración habla sobre el problema que se intenta abordar.
+La 3ra oración describe el método.
+La 4ta oración de cómo el método es validado.
+
+(El abstract de la tesina puede ser un poco más extenso)
+
+Estructura General de una Tesina:
+Portada
+Abstract
+1. Introducción
+1.1 Motivación
+1.2 Objetivos
+1.3 Trabajos publicados durante la tesina (si los hubiere)
+1.4 Estructura de la tesina
+2. Trabajo Relacionado
+3. Conceptos Previos
+4. Método
+5. Experimentos <- Este capítulo es el primero que debe escribirse
+6. Conclusiones
+6.1 Trabajo Futuro
+Apéndices (si los hubiere)
+Referencias
+
+Comentarios sobre Trabajo Relacionado:
+- Explicar los trabajos relacionados que se referencian: características principales, ventajas desventajas, etc.
+
+Comentarios generales:
+- Cada capítulo debe tener un texto introductorio que cuente de qué va el capítulo, qué se presenta o describe.
+
+- Las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra "Figura". Observar que la F es mayúscula, y XXX resulta de usar \ref{fig:nombre_figura}.
+
+- Todos los captions de las figuras deben terminar con punto (.)
+
+- Todas las ecuaciones (incluso las que están centradas) deben terminar con punto (.) o con coma (,). En el caso de coma y punto y seguido no debe haber sangría en la oración que sigue a la ecuación.
+
+- Usar itálica para texto en inglés
+
+- Para las unidades o números con unidades utilizar el paquete siunitx de latex. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
+
+- Ser detallado y claro en el texto, repetir palabras hace que sea fácil de leer.
+
+- Mantener una terminología. Ejemplo: usar V-SLAM o SLAM visual, no ambas.
+
+- Redactar de manera formal: no utilizar "etc" por ejemplo.
+
+- Las figuras deben estar vectorizadas con inkscape o descargarlas ya vectorizadas (pdf vectorizado o svg)
+
+- Remover citas que no se referencian en el texto, hace que el .bib quede más limpio.
+
+Tratamiento de referencias:
+Si bien el formato de las citas no es lo importante ahora, está bueno formatearlas bien para luego sea más fácil su uso y aparte son más fáciles de seguir y de referenciar. Para agregar una cita lo que propongo es descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al .bib y luego hacer algunas correcciones:
+- La referencia de la cita intento que tenga el formato: apellido-primer-autor-año-primera-palabra-del-titulo. Ej: davison2007monoslam
+- Completar el nombre de los autores, casi siempre estan con siglas los nombres, y las letras con acentos no aparecen. Ej: A. Davison -> Andrew Davison o Davison, Andrew
+- Usar el Keyword definido de la conferencia o revista en el campo "proceedings" o "journal". Ej: proceedings = ICRA. Acá ICRA es una keyword que es reemplazada por el string "IEEE Intl. Conf. on Robotics and Automation (ICRA)"
+- Rodear al título con doble llave para que se mantengan todas las mayúsculas. Ej: title = {LALALA} -> {{LALALA}}
+- Le agrego un guión extra a las páginas, porque sino no se visualiza bien. Ej: 234-242 -> 234--242
+- También esta bueno que esté el DOI y/o ISBN de la cita
+
+Para los gráficos vectorizados propongo usar inkscape tiene PPA para instalarlo.
+Agregar el plugin textext de inkscape para poner texto en latex en las figuras.
+
+\end{document}
