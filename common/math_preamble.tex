@@ -1,0 +1,165 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsopn}
+\usepackage{mathtools}
+\usepackage{nicematrix} % Add colors to matrix
+
+
+% set matrix maximum length
+\setcounter{MaxMatrixCols}{20}
+
+% math
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+
+% Declare arg max and arg min functionss
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Declare atan2 
+\DeclareMathOperator{\atantwo}{atan2}
+
+% Homogeneous decoration function
+\newcommand{\homo}[1]{\dot{#1}}
+
+
+% Declare projection as math function
+\DeclareMathOperator{\proj}{proj}
+\newcommand{\fromCoord}[2]{{#1}_\mathrm{#2}}
+\newcommand{\toCoord}[2]{\prescript{\mathrm{#2}}{}{#1}}
+\newcommand{\worldCoordSystem}{\mathrm{W}}
+\newcommand{\bodyCoordSystem}{\mathrm{B}}
+\newcommand{\cameraCoordSystem}{\mathrm{C}}
+\newcommand{\origin}{\vec{o}}
+\newcommand{\point}{\vec{p}}
+\newcommand{\worldPoint}{\toCoord{\point}{\worldCoordSystem}}
+\newcommand{\imagePoint}{\vec{u}}
+\newcommand{\cameraPoint}{\toCoord{\point}{\cameraCoordSystem}}
+\newcommand{\homoWorldPoint}{\toCoord{\homo{\point}}{\worldCoordSystem}}
+\newcommand{\homoImagePoint}{\homo{\imagePoint}}
+\newcommand{\homoCameraPoint}{\toCoord{\homo{\point}}{\cameraCoordSystem}}
+\newcommand{\measurement}{\vec{z}}
+\newcommand{\prediction}{\hat{\vec{z}}}
+\newcommand{\seMatrix}{\vec{\xi}}
+\newcommand{\transform}[2]{\toCoord{\fromCoord{\seMatrix}{#2}}{#1}}
+\newcommand{\pointCoord}[1]{\toCoord{\point}{#1}}
+\newcommand{\rotation}{\vec{R}}
+\newcommand{\rotationCoord}[2]{\toCoord{\fromCoord{\rotation}{#2}}{#1}}
+\newcommand{\translation}{\vec{t}}
+\newcommand{\translationCoord}[2]{\toCoord{\fromCoord{\translation}{#2}}{#1}}
+\newcommand{\intrinsicMatrix}{\vec{K}}
+\newcommand{\principalPoint}{\vec{c}}
+\newcommand{\reprojectionError}{u}
+\newcommand{\projectionMatrix}{\vec{P}}
+\newcommand{\cameraCenter}{\vec{o}}
+\newcommand{\worldCameraCenter}{\toCoord{\cameraCenter}{\worldCoordSystem}}
+\newcommand{\essentialMatrix}{\vec{E}}
+\newcommand{\fundamentalMatrix}{\vec{F}}
+\newcommand{\inverse}[1]{{#1}^{-1}}
+\newcommand{\epipole}{\vec{e}}
+
+% Localization (State Estimation)
+\newcommand{\state}{x}
+\newcommand{\observation}{z}
+\newcommand{\controlCommand}{u}
+\newcommand{\covariance}{\Sigma}
+\newcommand{\motionModelNoise}{\epsilon}
+\newcommand{\measurementModelNoise}{\delta}
+\newcommand{\motionModelFunction}[1]{g\left( #1 \right)}
+\newcommand{\observationModelFunction}[1]{h\left( #1 \right)}
+\newcommand{\motionParametersCovariance}{R}
+\newcommand{\observationModelCovariance}{Q}
+\newcommand{\motionModelJacobian}{G}
+\newcommand{\observationModelJacobian}{H}
+\newcommand{\kalmanGain}{K}
+\newcommand{\normalDistribution}[2]{\mathcal{N}\left( {#1}, {#2} \right)}
+\newcommand{\motionModelJacobianControl}{V}
+\newcommand{\motionModelCovariance}{M}
+\newcommand{\stateEvolutionMatrix}{A}
+
+% Mapping slides
+\newcommand{\map}{m}
+\newcommand{\mapRandomVariable}{m}
+
+% SLAM slides
+\newcommand{\informationMatrix}{\vec{\Omega}}
+\newcommand{\error}{\vec{e}}
+\newcommand{\observationBold}{\vec{z}}
+\newcommand{\stateBold}{\vec{x}}
+\newcommand{\jacobian}{\vec{J}}
+\newcommand{\linearSystemb}{\vec{b}}
+\newcommand{\linearSystemH}{\vec{H}}
+\newcommand{\covarianceBold}{\vec{\covariance}}
+
+
+% Motion Planning slides
+\newcommand{\workSpace}{\mathcal{W}}
+\newcommand{\obstaclesSet}{\mathcal{O}}
+\newcommand{\robotInConfiguration}{\mathcal{A}}
+\newcommand{\robotConfiguration}{q}
+\newcommand{\configurationSpace}{\mathcal{C}}
+\newcommand{\freeConfigurationSpace}{\configurationSpace_{free}}
+\newcommand{\obstableConfigurationSpace}{\configurationSpace_{obs}}
+\newcommand{\goalSet}{\configurationSpace_{goal}}
+\newcommand{\startConfiguration}{\robotConfiguration_{I}}
+\newcommand{\goalConfiguration}{\robotConfiguration_{G}}
+\newcommand{\continuousPath}{\tau}
+\newcommand{\motionLaw}{\gamma}
+\newcommand{\robotActionSpace}{\mathcal{U}}
+
+
+% Motion model
+\newcommand{\position}{\vec{p}}
+\newcommand{\orientation}{\vec{O}}
+\newcommand{\orientationQuaternion}{\vec{q}}
+\newcommand{\predictedPosition}{\hat{\vec{p}}}
+\newcommand{\predictedOrientationQuaternion}{\hat{\vec{q}}}
+\newcommand{\linearVelocity}{\vec{v}}
+\newcommand{\angularVelocity}{\vec{\omega}}
+
+\DeclareMathOperator{\slerpOp}{slerp}
+\newcommand{\slerp}[1]{\slerpOp{\left( #1 \right)}}
+
+% Map structure
+\newcommand{\keyframesSet}{K}
+\newcommand{\mapPointsSet}{P}
+\newcommand{\observedMapPoints}{O}
+\newcommand{\covisibilityKeyframes}{CK}
+\newcommand{\localMap}{local\_map}
+
+% Bundle Adjutment
+\newcommand{\update}{\vec{\delta}}
+\newcommand{\incremental}{\hat{\update}}
+
+
+% Loop Closure names
+
+% scaled operators and letters to fancy view
+\newcommand{\sminus}{\scalebox{0.5}[1.0]{$-$}}
+\newcommand{\splus}{\scalebox{0.6}[0.6]{$+$}}
+\newcommand{\curr}{c}
+\newcommand{\sind}[1]{\scalebox{0.6}[0.6]{$#1$}}
+\newcommand{\ind}[1]{\scalebox{0.7}[0.7]{$#1$}}
+
+\newcommand{\keyframe}{\vec{K}}
+\newcommand{\bowVector}{\vec{v}}
+\newcommand{\lcError}{\vec{\Omega}}
+\newcommand{\relativeTransformation}{\seMatrix}
+\DeclareMathOperator{\interpolate}{interpolate}
+
+\newcommand{\relativeMotion}{\vec{\delta}}
+\newcommand{\groundTruth}[1]{{#1}^{*}}
+
+% definición del operador rot()
+\DeclareMathOperator{\rotationOp}{rot}
+\newcommand{\getRotation}[1]{\rotationOp{\left( #1 \right)}}
+
+\DeclareMathOperator{\translationOp}{trans}
+\newcommand{\getTranslation}[1]{\translationOp{\left( #1 \right)}}
+
+
+
+
+
+
+

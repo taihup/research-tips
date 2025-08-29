@@ -1,0 +1,101 @@
+% para la bibliografía se requiere biber y configurar texstudio
+
+% Latex packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % para copiar acentos en español del pdf y permite acentos en las notas
+\usepackage[spanish]{babel}
+\usepackage[per-mode = symbol]{siunitx} % para manejar las unidades
+\usepackage{multimedia} % to add videos with \movie command
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath} % bmatrix
+\usepackage[makeroom]{cancel} % \cancel to cancel terms in math equations
+\renewcommand{\CancelColor}{\color{red}} % set red color for \cancel command
+\usepackage[caption=false]{subfig} % caption = false elimina la palabra "Figura" del caption
+\usepackage{import} % para el comando import (se usa para pdf_tex)
+\captionsetup[subfigure]{labelformat=empty} % remover el indice del caption de la subfigura
+\usepackage{booktabs} % \toprule \midrule \bottomrule
+\usepackage[backend=biber]{biblatex} % set biber to format references. Must configure Biber in Texstudio
+\usepackage{csquotes} % to remove warning triggered by biblatex and babel
+\usepackage{algorithm} % to put captions to the algorithmics environmets
+\usepackage{algpseudocode} % to write algorithm
+\usepackage{tikz} % to use tikz
+\usepackage[export]{adjustbox} %valign in subfloat
+\usepackage{colortbl} % to paint cells in a table
+
+% Color commands for annotations
+\newcommand\TODO[1]{\textbf{\textcolor{red}{#1}}} %  TODO notes
+
+% Graphic paths
+\graphicspath{{./images/}}
+
+% listings configuration for C code
+\usepackage{listings} % code
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{129,20,83}
+
+\lstset{ % spanish characters for listings package
+	inputencoding=latin1,
+    columns=fullflexible,
+	breaklines=true,
+	tabsize=2,
+	showstringspaces=false,
+	basicstyle=\ttfamily,
+	backgroundcolor=\color{lightgray}, % Choose background color
+	literate={á}{{\'a}}1
+	{ã}{{\~a}}1
+	{é}{{\'e}}1
+	{ó}{{\'o}}1
+	{í}{{\'i}}1
+	{ñ}{{\~n}}1
+	{¡}{{!`}}1
+	{¿}{{?`}}1
+	{ú}{{\'u}}1
+	{Í}{{\'I}}1
+	{Ó}{{\'O}}1
+    {-}{-}1
+}
+
+\lstdefinestyle{cpp}{ % spanish characters for listings package
+    language=C++,
+   	commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{red},
+    emph={int,char,double,float,unsigned,void,bool},
+    emphstyle={\color{blue}}
+}
+
+\lstdefinestyle{bash}{ % spanish characters for listings package
+	language=Bash
+}
+
+\lstdefinestyle{xml}{
+	language=XML,
+	morekeywords={encoding,xs:schema,xs:element,xs:complexType,xs:sequence,xs:attribute}
+}
+
+\lstdefinestyle{cmake}{
+	language=make, % there is no cmake support in listings
+}
+
+\lstdefinestyle{python}{
+    language=python,
+}
+
+
+%%%%% PARA QUE EN LAS TABLAS SE PUEDA PONER UN SALTO DE LINEA DENTRO DE UNA CELDA
+\newcommand{\specialcell}[2][c]{%
+    \begin{tiny}
+        \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}  
+    \end{tiny}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% PARA QUE LAS TABLAS TENGAN TODAS LAS COLUMNAS CENTRADAS Y DE IGUAL TAMAÑO
+\usepackage{tabularx}
+\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

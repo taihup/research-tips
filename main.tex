@@ -1,33 +1,16 @@
 \documentclass[a4paper,	11pt]{article}
-\usepackage[spanish,es-tabla]{babel} % para acentos en español
-\usepackage[utf8]{inputenc} % para poder copiar acentos desde el pdf
-\usepackage[T1]{fontenc} % para poder copiar acentos desde el pdf
-\usepackage{amsmath}
-\usepackage{comment}
-\usepackage[hidelinks]{hyperref}
-\usepackage{color}
-\usepackage{siunitx}
-\setlength{\marginparwidth}{2cm}
-\usepackage{graphicx}
-\usepackage[export]{adjustbox}
-\usepackage{multirow}
-\usepackage{tablefootnote}
 
-%\setlength{\marginparwidth}{2cm}
-\usepackage{todonotes}
+% add latex preamble
+\input{./common/latex_preamble}
+
+% add math preamble
+\input{./common/math_preamble}
 
 % changes margins
 \usepackage[a4paper, total={7.5in, 10.6in}]{geometry}
 
-\begin{document}
 
-\renewcommand\floatpagefraction{.9}
-\renewcommand\topfraction{.9}
-\renewcommand\bottomfraction{.9}
-\renewcommand\textfraction{.1}
-\setcounter{totalnumber}{50}
-\setcounter{topnumber}{50}
-\setcounter{bottomnumber}{50}
+\begin{document}
 
 \title{Tips Escritura Informes}
 \author{Taihú Pire}
@@ -97,8 +80,9 @@ Referencias
 %
 \begin{itemize}
     \item Las figuras deben estar vectorizadas con inkscape o descargarlas ya vectorizadas (pdf vectorizado o svg)
-    \item Para los gráficos vectorizados propongo usar inkscape tiene PPA para instalarlo. Agregar el plugin textext de inkscape para poner texto en latex en las figuras.
-    \item Las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra "Figura". Observar que la F es mayúscula, y XXX resulta de usar \ref{fig:nombre_figura}.
+    \item En inkscape es posible agregar código \LaTeX utilizando plugin textext\footnote{https://textext.github.io/textext/}.
+    \item En inkscape también se puede poner texto ``normal' con la tipografía de latex por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
+    \item Las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
     \item Todos los captions de las figuras y tablas deben terminar con punto (.)
 \end{itemize}
 
