@@ -57,6 +57,8 @@ Referencias
 \subsection{Comentarios generales}
 %
 \begin{itemize}
+    \item El documento en \LaTeX debe compilar sin errores ni warnings.
+
     \item Ser detallado y claro en el texto, repetir palabras hace que sea fácil de leer.
 
     \item Redactar de manera formal: no utilizar "etc" por ejemplo, en vez utilizar ``entre otros''.
@@ -71,7 +73,7 @@ Referencias
 
     \item Para un término en inglés Ej: \emph{keyframe} utilizar itálica únicamente en la primera ocurrencia de la palabra, luego no se usa más itálica para ese término.
 
-    \item Para las unidades o números con unidades utilizar el paquete siunitx de latex. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
+    \item Para las unidades o números con unidades utilizar el paquete siunitx de \LaTeX. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
 
     \item Remover citas que no se referencien en el texto, esto hace que el .bib quede más limpio.
 \end{itemize}
@@ -81,8 +83,8 @@ Referencias
 \begin{itemize}
     \item Las figuras deben estar vectorizadas con inkscape\footnote{\url{https://inkscape.org/}} o descargarlas ya vectorizadas (\lstinline{pdf} vectorizado o \lstinline{svg})
     \item En inkscape es posible agregar código \LaTeX utilizando plugin \lstinline{textext}\footnote{\url{https://textext.github.io/textext/}}.
-    \item En inkscape también se puede poner texto ``normal'' con la tipografía de latex por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
-    \item Las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
+    \item En inkscape también se puede poner texto ``normal'' con la tipografía de \LaTeX por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
+    \item En el texto, las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
     \item Todos los captions de las figuras y tablas deben terminar con punto (.)
 \end{itemize}
 
