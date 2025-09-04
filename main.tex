@@ -12,56 +12,27 @@
 
 \begin{document}
 
-\title{Tips Escritura Informes}
+\title{Gruía de Escritura Científica}
 \author{Taihú Pire}
 
 
-\tableofcontents
+
 
 \maketitle
 
+\tableofcontents
 
 Este documento es una guía para hacer propuestas, informes, tesinas, tesis, publicaciones y presentaciones.
 
-\section{Estructura general de un Abstract}
-Cada oración del abstract tiene que decir algo puntual:\\
-La 1ra oración puede ser la que pone contexto.\\
-La 2da oración habla sobre el problema que se intenta abordar.\\
-La 3ra oración describe el método.\\
-La 4ta oración de cómo el método es validado.\\
-(El abstract de la tesina puede ser un poco más extenso)
 
-\section{Estructura General de una Tesina}
-Portada\\
-Abstract\\
-1. Introducción\\
-1.1 Motivación\\
-1.2 Objetivos\\
-1.3 Trabajos publicados durante la tesina (si los hubiere)\\
-1.4 Estructura de la tesina\\
-2. Trabajo Relacionado\\
-3. Conceptos Previos\\
-4. Método\\
-5. Experimentos <- Este capítulo es el primero que debe escribirse\\
-6. Conclusiones\\
-6.1 Trabajo Futuro\\
-Apéndices (si los hubiere)\\
-Referencias
-
-\subsection{Comentarios sobre Trabajo Relacionado}
-\begin{itemize}
-    \item Explicar los trabajos relacionados que se referencian: características principales, ventajas desventajas, etc.
-\end{itemize}
-
-
-\subsection{Comentarios generales}
+\section{Comentarios generales}
 %
 \begin{itemize}
-    \item El documento en \LaTeX debe compilar sin errores ni warnings.
+    \item El documento en \LaTeX~debe compilar sin errores ni warnings.
 
     \item Ser detallado y claro en el texto, repetir palabras hace que sea fácil de leer.
 
-    \item Redactar de manera formal: no utilizar "etc" por ejemplo, en vez utilizar ``entre otros''.
+    \item Redactar de manera formal: no utilizar ``etc'' por ejemplo, en vez utilizar ``entre otros''.
 
     \item Mantener una terminología. Ejemplo: usar V-SLAM o SLAM visual, no ambas.
 
@@ -78,21 +49,62 @@ Referencias
     \item Remover citas que no se referencien en el texto, esto hace que el .bib quede más limpio.
 \end{itemize}
 
+\section{Estructura General de una Tesina}
+Portada\\
+Abstract\\
+1. Introducción\\
+1.1 Motivación\\
+1.2 Objetivos\\
+1.3 Trabajos publicados durante la tesina (si los hubiere)\\
+1.4 Estructura de la tesina\\
+2. Trabajo Relacionado\\
+3. Conceptos Previos\\
+4. Método\\
+5. Experimentos $\leftarrow$ \textbf{Este capítulo es el primero que debe escribirse}\\
+6. Conclusiones\\
+6.1 Trabajo Futuro\\
+Apéndices (si los hubiere)\\
+Referencias
+
+\subsection{Estructura general de un Abstract}
+Cada oración del abstract tiene que decir algo puntual:\\
+La 1ra oración puede ser la que pone contexto.\\
+La 2da oración habla sobre el problema que se intenta abordar.\\
+La 3ra oración describe el método.\\
+La 4ta oración de cómo el método es validado.\\
+(El abstract de la tesina puede ser un poco más extenso)
+
+
+\subsection{Comentarios sobre Trabajo Relacionado}
+\begin{itemize}
+    \item Explicar los trabajos relacionados que se referencian: características principales, ventajas desventajas, etc.
+    \item Ver el estado del arte de los papers e inspirarse en ellos. Ver qué trabajos citan y cómo los describen.
+\end{itemize}
+
 \subsection{Tratamiento de Figuras}
 %
 \begin{itemize}
     \item Las figuras deben estar vectorizadas con inkscape\footnote{\url{https://inkscape.org/}} o descargarlas ya vectorizadas (\lstinline{pdf} vectorizado o \lstinline{svg})
+    
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width=0.5\linewidth]{./images/bitmap_vs_svg.pdf}
+        \caption{Diferencias entre imagen raster (jpg, png, tif, entre otros) y vecorizada (pdf vectorizado o svg).}
+        \label{fig:bitmap_vs_svg}
+    \end{figure}
+
     \item En inkscape es posible agregar código \LaTeX utilizando plugin \lstinline{textext}\footnote{\url{https://textext.github.io/textext/}}.
     \item En inkscape también se puede poner texto ``normal'' con la tipografía de \LaTeX por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
     \item En el texto, las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
     \item Todos los captions de las figuras y tablas deben terminar con punto (.)
+    \item Cuando una imagen es extraída de un paper sin hacerle modificaciones se debe poner al final del caption la oración: Imagen extraída de [CITA DEL PAPER]. En cambio, si la figura fue modificada o adaptada de [CITA DEL PAPER].
 \end{itemize}
 
 
 \section{Tratamiento de referencias}
-Si bien el formato de las citas no es lo importante ahora, está bueno formatearlas bien para luego sea más fácil su uso y aparte son más fáciles de seguir y de referenciar. Para agregar una cita se debe descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al .bib y luego hacer algunas correcciones:
+Las referencias deben estar formateadas adecuadamente para mantener la formalidad y facilitar su reutilización en otros documentos. Para agregar una cita se debe descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al \lstinline{.bib}, y luego hacer algunas correcciones:
 \begin{itemize}
-    \item La referencia de la cita intento que tenga el formato: apellido-primer-autor-año-primera-palabra-del-titulo. Ej: davison2007monoslam
+    \item El keyword único de la referencia debe tener el formato: \lstinline{apellido-primer-autor-año-primera-palabra-del-titulo}. Ej: \lstinline{davison2007monoslam}
     \item Completar el nombre de los autores, casi siempre estan con siglas los nombres, y las letras con acentos no aparecen. Ej: A. Davison -> Andrew Davison o Davison, Andrew
     \item Usar el Keyword definido de la conferencia o revista en el campo ``proceedings'' o ``journal''. Ej: proceedings = ICRA. Acá ICRA es una keyword que es reemplazada por el string ``IEEE Intl. Conf. on Robotics and Automation (ICRA)''
     \item Rodear al título con doble llave para que se mantengan todas las mayúsculas. Ej: title = \{ LALALA \} $\rightarrow$ \{\{ LALALA \}\}
@@ -102,8 +114,6 @@ Si bien el formato de las citas no es lo importante ahora, está bueno formatear
 
 \section{Herramientas Útiles}
 
-\todo[inline]{agregar links}
-
 \begin{itemize}
     \item C++/Python
     \item ROS2 (Robotics Operating System): framework de robótica
@@ -112,14 +122,14 @@ Si bien el formato de las citas no es lo importante ahora, está bueno formatear
     \item Docker: contenedor
     \item Latex/Lyx: escritura de informes o papers
     \item VScode: IDE de desarrollo
-    \item Yed: diagramas
+    \item Yed: diagramas \url{https://www.yworks.com/products/yed}
     \item inkscape: gráficos vectorizados + plugin \url{https://textext.github.io/textext/}
     \item pdfpc: visualizador de slides (hechas en latex)
     \item Visualizar Rotaciones \url{https://articulatedrobotics.xyz/tools/rotation-calculator}
     \item Búsqueda y Análisis de papers:
     \begin{itemize}
         \item Búsqueda Avanzada de Google Scholar \url{https://scholar.google.com/}
-        \item Mendeley: manejador de papers
+        \item Mendeley: manejador de papers \url{https://www.mendeley.com/}
         \item \url{https://www.connectedpapers.com/}: grafo para búsqueda del estado del arte
         \item NotebookLM: Ayuda en la comprensión \url{https://notebooklm.google.com/}
     \end{itemize}
