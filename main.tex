@@ -9,6 +9,8 @@
 % changes margins
 \usepackage[a4paper, total={7.5in, 10.6in}]{geometry}
 
+% bibliography
+\addbibresource{./common/bibliography.bib}
 
 \begin{document}
 
@@ -101,7 +103,7 @@ La 4ta oración de cómo el método es validado.\\
 
 
 \section{Tratamiento de referencias}
-Las referencias deben estar formateadas adecuadamente para mantener la formalidad y facilitar su reutilización en otros documentos. Para agregar una cita se debe descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al \lstinline{.bib}, y luego hacer algunas correcciones:
+Las referencias deben estar formateadas adecuadamente para mantener la formalidad y facilitar su reutilización en otros documentos. Para agregar una cita se debe descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al archivo \lstinline{bibliography.bib}, y luego hacer algunas correcciones:
 \begin{itemize}
     \item El keyword único de la referencia debe tener el formato: \lstinline{apellido-primer-autor-año-primera-palabra-del-titulo}. Ej: \lstinline{davison2007monoslam}
     \item Completar el nombre de los autores, casi siempre estan con siglas los nombres, y las letras con acentos no aparecen. Ej: A. Davison -> Andrew Davison o Davison, Andrew
@@ -109,6 +111,7 @@ Las referencias deben estar formateadas adecuadamente para mantener la formalida
     \item Rodear al título con doble llave para que se mantengan todas las mayúsculas. Ej: title = \{ LALALA \} $\rightarrow$ \{\{ LALALA \}\}
     \item Le agrego un guión extra a las páginas, porque sino no se visualiza bien. Ej: 234-242 $\rightarrow$ 234--242
     \item Siempre debe estar el DOI y/o ISBN de la cita cuando esten disponibles.
+    \item Un ejemplo de una referencia formateada adecuadamente es \cite{grisetti2010tutorial}
 \end{itemize}
 
 
@@ -155,6 +158,6 @@ Ejemplo:
 \end{itemize}
 
 
-\todo[inline]{Agregar referencias}
+\printbibliography
 
 \end{document}
