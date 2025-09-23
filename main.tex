@@ -29,7 +29,7 @@ Este documento es una guía para hacer propuestas, informes, tesinas, tesis, pub
 \section{Comentarios generales}
 %
 \begin{itemize}
-    \item El documento en \LaTeX~debe compilar sin errores ni warnings.
+    \item El documento en {\LaTeX} debe compilar sin errores ni warnings.
 
     \item Ser detallado y claro en el texto, repetir palabras hace que sea fácil de leer.
 
@@ -45,7 +45,7 @@ Este documento es una guía para hacer propuestas, informes, tesinas, tesis, pub
 
     \item Para un término en inglés Ej: \emph{keyframe} utilizar itálica únicamente en la primera ocurrencia de la palabra, luego no se usa más itálica para ese término.
 
-    \item Para las unidades o números con unidades utilizar el paquete siunitx de \LaTeX. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
+    \item Para las unidades o números con unidades utilizar el paquete siunitx de {\LaTeX}. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
 
     \item Remover citas que no se referencien en el texto, esto hace que el .bib quede más limpio.
 \end{itemize}
@@ -78,9 +78,20 @@ La 4ta oración de cómo el método es validado.\\
 
 \subsection{Comentarios sobre Trabajo Relacionado}
 \begin{itemize}
-    \item Explicar los trabajos relacionados que se referencian: características principales, ventajas desventajas, etc.
+    \item Describir los trabajos relacionados que se referencian: características principales, ventajas, desventajas, etc.
     \item Ver el estado del arte de los papers e inspirarse en ellos. Ver qué trabajos citan y cómo los describen.
 \end{itemize}
+
+\subsubsection{Búsqueda y Análisis de Papers}
+    \begin{itemize}
+        \item Búsqueda Avanzada de Google Scholar \url{https://scholar.google.com/}
+        \item Mendeley: manejador de papers \url{https://www.mendeley.com/}
+        \item \url{https://www.connectedpapers.com/}: grafo para búsqueda del estado del arte
+        \item NotebookLM: Ayuda en la comprensión \url{https://notebooklm.google.com/}
+        \item Ranking de Google de revistas y conferencias de Robótica: \url{https://scholar.google.com/citations?view_op=top_venues&hl=es&vq=eng_robotics}
+        \item Ranking de Google de revistas y conferencias de Visión por Computadora: \url{https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computervisionpatternrecognition}
+        \item Scimagojr: Conocer si una revista es Q1, Q2, Q3 o Q4 \url{https://www.scimagojr.com/}
+    \end{itemize}
 
 \subsection{Tratamiento de Figuras}
 %
@@ -94,11 +105,12 @@ La 4ta oración de cómo el método es validado.\\
         \label{fig:bitmap_vs_svg}
     \end{figure}
 
-    \item En inkscape es posible agregar código \LaTeX utilizando plugin \lstinline{textext}\footnote{\url{https://textext.github.io/textext/}}.
-    \item En inkscape también se puede poner texto ``normal'' con la tipografía de \LaTeX por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
+    \item En inkscape es posible agregar código {\LaTeX} utilizando plugin \lstinline{textext}\footnote{\url{https://textext.github.io/textext/}}.
+    \item En inkscape también se puede poner texto ``normal'' con la tipografía de {\LaTeX} por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
     \item En el texto, las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
     \item Todos los captions de las figuras y tablas deben terminar con punto (.)
-    \item Cuando una imagen es extraída de un paper sin hacerle modificaciones se debe poner al final del caption la oración: Imagen extraída de [CITA DEL PAPER]. En cambio, si la figura fue modificada o adaptada de [CITA DEL PAPER].
+    \item Para extraer gráficos vectorizados de un paper (\lstinline{pdf}), basta con abrir el archivo \lstinline{pdf} con inkscape.
+    \item Cuando una imagen es extraída de un paper sin hacerle modificaciones se debe poner al final del caption la oración: Imagen extraída de [CITA DEL PAPER]. En cambio, si la figura fue modificada o adaptada se debe poner: Imagen adaptada de [CITA DEL PAPER].
 \end{itemize}
 
 
@@ -133,6 +145,7 @@ Ejemplo:
     \end{algorithmic}
 
 \section{Código}
+Para poner código o partes de código se debe utilizar el paquete de {\LaTeX} \lstinline{listings}: \url{https://ctan.org/pkg/listings}.
 
 \section{Escritura de Publicaciones}
 
@@ -148,19 +161,12 @@ Ejemplo:
     \item Gazebo: simulador
     \item Git: versionador
     \item Docker: contenedor
-    \item Latex/Lyx: escritura de informes o papers
+    \item {\LaTeX}/Lyx: escritura de informes o papers
     \item VScode: IDE de desarrollo
     \item Yed: diagramas \url{https://www.yworks.com/products/yed}
     \item inkscape: gráficos vectorizados + plugin \url{https://textext.github.io/textext/}
-    \item pdfpc: visualizador de slides (hechas en latex)
+    \item pdfpc: visualizador de slides (hechas en {\LaTeX})
     \item Visualizar Rotaciones \url{https://articulatedrobotics.xyz/tools/rotation-calculator}
-    \item Búsqueda y Análisis de papers:
-    \begin{itemize}
-        \item Búsqueda Avanzada de Google Scholar \url{https://scholar.google.com/}
-        \item Mendeley: manejador de papers \url{https://www.mendeley.com/}
-        \item \url{https://www.connectedpapers.com/}: grafo para búsqueda del estado del arte
-        \item NotebookLM: Ayuda en la comprensión \url{https://notebooklm.google.com/}
-    \end{itemize}
 \end{itemize}
 
 
