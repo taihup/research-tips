@@ -120,7 +120,7 @@ La 4ta oración de cómo el método es validado.\\
 
     \item En inkscape es posible agregar código {\LaTeX} utilizando plugin \lstinline{textext}\footnote{\url{https://textext.github.io/textext/}}.
     \item En inkscape también se puede poner texto ``normal'' con la tipografía de {\LaTeX} por defecto que es CMU Serif  (Computer Modern Unicode Serif). Para esto se debe instalar primero el paquete \lstinline{sudo apt-get install fonts-cmu}
-    \item En el texto, las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig\:nombre\_figura\}.
+    \item En el texto, las figuras siempre se referencian de la misma manera. Ej: La Figura XXX ... Es decir, se las antepone únicamente con la palabra ``Figura''. Observar que la F es mayúscula, y XXX resulta de usar \textbackslash ref\{fig:nombre\_figura\}.
     \item Todos los captions de las figuras y tablas deben terminar con punto (.)
     \item Para extraer gráficos vectorizados de un paper (\lstinline{pdf}), basta con abrir el archivo \lstinline{pdf} con inkscape.
     \item Cuando una imagen es extraída de un paper sin hacerle modificaciones se debe poner al final del caption la oración: Imagen extraída de [CITA DEL PAPER]. En cambio, si la figura fue modificada o adaptada se debe poner: Imagen adaptada de [CITA DEL PAPER].
@@ -133,11 +133,13 @@ La 4ta oración de cómo el método es validado.\\
 Las referencias deben estar formateadas adecuadamente para mantener la formalidad y facilitar su reutilización en otros documentos. Para agregar una cita se debe descargar el bibtex de la página oficial donde esta publicado el trabajo (IEEE, Elsevier, Springer, etc). Agregar el bibtex al archivo \lstinline{bibliography.bib}, y luego hacer algunas correcciones:
 \begin{itemize}
     \item El keyword único de la referencia debe tener el formato: \lstinline{apellido-primer-autor-año-primera-palabra-del-titulo}. Ej: \lstinline{davison2007monoslam}
-    \item Completar el nombre de los autores, casi siempre estan con siglas los nombres, y las letras con acentos no aparecen. Ej: A. Davison -> Andrew Davison o Davison, Andrew
-    \item Usar el Keyword definido de la conferencia o revista en el campo ``proceedings'' o ``journal''. Ej: proceedings = ICRA. Acá ICRA es una keyword que es reemplazada por el string ``IEEE Intl. Conf. on Robotics and Automation (ICRA)''
-    \item Rodear al título con doble llave para que se mantengan todas las mayúsculas. Ej: title = \{ LALALA \} $\rightarrow$ \{\{ LALALA \}\}
-    \item Le agrego un guión extra a las páginas, porque sino no se visualiza bien. Ej: 234-242 $\rightarrow$ 234--242
-    \item Siempre debe estar el DOI y/o ISBN de la cita cuando esten disponibles.
+    \item Completar el nombre de los autores, casi siempre estan con siglas los nombres, y las letras con acentos no aparecen. Ej: A. Davison $\rightarrow$ Andrew Davison ó Davison, Andrew
+    \item Usar el Keyword definido de la conferencia o revista en el campo ``proceedings'' o ``journal''. Ej: \lstinline|proceedings = ICRA|. Acá \lstinline|ICRA| es una keyword que es reemplazada por el string ``IEEE Intl. Conf. on Robotics and Automation (ICRA)''
+    \item Poner al título como hipervínculo a la página donde está publicado el paper. Importante: el título debe ir entre llaves para que respete mayúsculas y minúsculas.
+    
+    Ej: \lstinline|title = {\href{link_al_paper}{Título del Paper}}|
+    \item Agregar un guión extra a las páginas, porque sino no se visualiza bien. Ej: 234-242 $\rightarrow$ 234--242
+    \item Siempre debe estar el DOI y/o ISBN de la referencia cuando esten disponibles.
     \item Un ejemplo de una referencia formateada adecuadamente es \cite{grisetti2010tutorial}
 \end{itemize}
 
