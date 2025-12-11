@@ -45,7 +45,7 @@ Este documento es una guía para hacer propuestas, informes, tesinas, tesis, pub
 
     \item Para las unidades o números con unidades utilizar el paquete \lstinline{siunitx} de {\LaTeX}. Ej: \SI{5}{\meter} o \si{\meter} para unidades solas.
 
-    \item Remover citas que no se referencien en el texto, esto hace que el .bib quede más limpio.
+    \item Remover referencias del .bib que no se utilicen en el texto, esto hace que el .bib quede más limpio.
 \end{itemize}
 
 \section{Tesinas}
@@ -87,9 +87,13 @@ La 3ra oración describe el método.\\
 La 4ta oración de cómo el método es validado.\\
 (El abstract de la tesina puede ser un poco más extenso)
 
-
 \section{Comentarios sobre Trabajo Relacionado}
 \begin{itemize}
+    \item En general, se deben citar trabajos recientes de no más de 5 años de antigüedad, salvo que sean trabajos clásicos o muy relevantes.
+    \item Deben ser trabajos publicados en conferencias o revistas de prestigio.
+    \item Evitar citar papers de arxiv, salvo que no haya otra opción.
+    \item Citar entre 10 y 15 trabajos. Citar los más relevantes.
+    \item Es posible agrupar trabajos que tengan características similares.
     \item Describir los trabajos relacionados que se referencian: características principales, ventajas, desventajas, etc.
     \item Ver el estado del arte de los papers e inspirarse en ellos. Ver qué trabajos citan y cómo los describen.
 \end{itemize}
@@ -104,6 +108,23 @@ La 4ta oración de cómo el método es validado.\\
         \item Ranking de Google de revistas y conferencias de Visión por Computadora: \url{https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computervisionpatternrecognition}
         \item Scimagojr: Conocer si una revista es Q1, Q2, Q3 o Q4 \url{https://www.scimagojr.com/}
     \end{itemize}
+
+\section{Comentarios sobre Conceptos Previos}
+%
+Capitulo de Conceptos Previos va en una tesina pero NO en un paper. En este capítulo se deben describir los conceptos teóricos y matemáticos que son necesarios para entender el método propuesto. No es necesario describir en detalle conceptos muy conocidos, pero sí dar una idea general de los mismos y poner referencias para que el lector pueda profundizar si lo desea.
+
+\section{Comentarios sobre Capítulo Método}
+%
+Este es el capítulo es el más importante de la tesina o paper. En este capítulo se debe describir el método propuesto de manera clara y detallada. Se deben incluir diagramas de bloques, ecuaciones, pseudocódigo, etc. para facilitar la comprensión del método.
+
+\section{Comentarios sobre Capítulo Experimentos}
+En este capítulo se deben describir los experimentos realizados para validar el método propuesto. Se deben incluir tablas y gráficos para mostrar los resultados obtenidos. Es importante comparar los resultados obtenidos con los de otros métodos existentes en la literatura.
+
+\section{Comentarios sobre Capítulo Conclusiones}
+En este capítulo se deben resumir los principales resultados obtenidos en la tesina o paper. Se deben destacar las contribuciones principales del trabajo realizado y se deben proponer posibles líneas de trabajo futuro. Es muy similar al abstract, pero más detallado.
+
+\section{Comentarios sobre Apéndices}
+Los apéndices son opcionales y se utilizan para incluir información adicional que no es esencial para entender el método propuesto, pero que puede ser útil para el lector. Por ejemplo, se pueden incluir detalles de implementación, derivaciones matemáticas, etc.
 
 \section{Tratamiento de Figuras}
 %
