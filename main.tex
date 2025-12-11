@@ -140,9 +140,35 @@ Las referencias deben estar formateadas adecuadamente para mantener la formalida
     Ej: \lstinline|title = {\href{link_al_paper}{Título del Paper}}|
     \item Agregar un guión extra a las páginas, porque sino no se visualiza bien. Ej: 234-242 $\rightarrow$ 234--242
     \item Siempre debe estar el DOI y/o ISBN de la referencia cuando esten disponibles.
-    \item Un ejemplo de una referencia formateada adecuadamente es \cite{grisetti2010tutorial}
 \end{itemize}
 
+Ejemplos de referencias formateadas adecuadamente de un paper de revista \cite{pire2019rosario} y de un paper de conferencia \cite{pire2015sptam}: 
+
+\begin{lstlisting}[style=bash] 
+% The Rosario Dataset
+@article{pire2019rosario,
+  title = {\href{https://doi.org/10.1177/0278364919841437}{The Rosario dataset: Multisensor data for localization and mapping in agricultural environments}},
+  author = {Taih{\'u} Pire and Mart{\'i}n Mujica and Javier Civera and Ernesto Kofman},
+  journal = IJRR,
+  volume = {38},
+  number = {6},
+  pages = {633--641},
+  year = {2019},
+  ISSN = {0278-3649},
+  doi = {10.1177/0278364919841437}
+}
+
+% S-PTAM (IROS)
+@inproceedings{pire2015sptam, 
+  author = {Pire, Taih{\'u} and Fischer, Thomas and Civera, Javier and De~Crist{\'o}foris, Pablo and Berlles, Julio Jacobo},
+  booktitle = IROS, 
+  title = {\href{http://dx.doi.org/10.1109/IROS.2015.7353546}{Stereo parallel tracking and mapping for robot localization}},
+  year = {2015}, 
+  pages = {1373--1378},
+  doi = {10.1109/IROS.2015.7353546}, 
+  month = {September}
+}
+\end{lstlisting}
 
 \section{Algoritmos}
 
